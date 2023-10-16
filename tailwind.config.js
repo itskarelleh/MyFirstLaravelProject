@@ -6,7 +6,14 @@ module.exports = {
         "./resources/**/*.vue",
     ],
     theme: {
-        extend: {},
+        fontFamily: {
+          sans: ['Sora']
+        },
+        extend: {
+            fontSize: {
+                xxs: '0.66rem',
+            },
+        },
     },
     plugins: [],
 }

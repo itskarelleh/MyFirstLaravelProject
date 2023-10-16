@@ -4,7 +4,7 @@
             <!-- Calendar -->
             <div class="flex flex-row space-x-4 justify-between">
                 <h2>Timeline</h2>
-                <button class="rounded-md text-xs text-semibold bg-slate-950 hover:bg-blue-600 transition-all ease-in-out text-white text-center p-2">Add event <i class="iconoir-plus"></i></button>
+                <button class="flex flex-row items-center rounded-md text-xs text-semibold bg-slate-950 hover:bg-blue-600 transition-all ease-in-out text-white text-center p-2">Add event <i class="iconoir-plus text-white text-lg"></i></button>
             </div>
             <div class="flex justify-between items-center">
                 <h3>September</h3>
@@ -15,7 +15,7 @@
             </div>
             <table class="w-full">
                 <thead>
-                <tr class="[&>th]:text-sm">
+                <tr class="[&>th]:text-xs [&>th]:text-neutral-400">
                     <th class="w-1/7">Sun</th>
                     <th class="w-1/7">Mon</th>
                     <th class="w-1/7">Tue</th>
@@ -40,7 +40,7 @@
                 @for ($i = 0; $i < 6; $i++)
                     <tr>
                         @for ($j = 0; $j < 7; $j++)
-                            <td class="w-1/7 text-sm text-center py-4"> {{-- Add padding to increase vertical spacing between rows --}}
+                            <td class="w-1/7 text-xs text-center py-4"> {{-- Add padding to increase vertical spacing between rows --}}
                                 @if ($emptyCells > 0)
                                     {{-- Display empty cell --}}
                                     @php
@@ -68,13 +68,27 @@
                 $endTime = strtotime('20:00');
                 $currentTime = $startTime;
             @endphp
-            <div class="w-full p-4">
+            <div class="w-full p-4 relative">
+                <div class="time-block bg-blue-500/50 top-10 h-36">
+                    <div class="text-sm flex flex-row space-x-4 justify-between">
+                        <div class="rounded-full bg-blue-500/70 w-4 h-4 p-4 flex flex-col items-center justify-center">
+                            <i class="iconoir-airplane rotate-45 text-blue-700 text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xs">Warsaw <i class="iconoir-arrow-right"></i> Rome</h3>
+                            <small class="text-xxs">8:00 • 9:15</small>
+                        </div>
+                        <button>
+                            <i class="iconoir-more-vert"></i>
+                        </button>
+                    </div>
+                </div>
                 @while ($currentTime <= $endTime)
                     @php
                         $timeLabel = date('g:i A', $currentTime);
                     @endphp
-                    <div class="mb-4 flex items-center">
-                        <div class="text-gray-600 text-sm mr-2">{{ $timeLabel }}</div>
+                    <div class="mb-12 flex items-center">
+                        <div class="text-gray-500 text-xxs mr-2">{{ $timeLabel }}</div>
                         <div class="flex-1 h-0.5 bg-gray-300"></div>
                     </div>
                     @php

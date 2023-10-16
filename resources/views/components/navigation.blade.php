@@ -11,10 +11,10 @@
             </button>
             <div>
                 <div class="hidden md:block">
-                    <button class="bg-blue-500 hover:bg-blue-600 transition-all ease-in-out text-white w-full rounded-md p-2 flex flex-row items-center justify-center">
+                    <button class="relative bottom-22 bg-blue-500 hover:bg-blue-600 transition-all ease-in-out text-white w-full rounded-md p-2 flex flex-row items-center justify-center">
                         New trip <i class="iconoir-plus text-xl"></i>
                     </button>
-                    <ul class="flex flex-col space-y-2">
+                    <ul class="flex flex-col space-y-8">
                         <x-link-with-icon iconClass="iconoir-home" label="Home" url="/" />
                         <x-link-with-icon iconClass="iconoir-bus" label="All trips" url="/" />
                         <x-link-with-icon iconClass="iconoir-airplane" label="Travels" url="/" />

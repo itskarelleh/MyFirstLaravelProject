@@ -1,6 +1,6 @@
 <!-- resources/views/livewire/rome-location.blade.php -->
 
-<div class="col-span-4">
+<div class="col-span-12 md:col-span-4">
     <iframe
         width="200"
         height="400"

@@ -9,5 +9,7 @@
             <button wire:click="next" class="hover:bg-white transition-all ease-in rounded-full w-10 h-10 flex flex-col items-center justify-center text-gray-600">&rarr;</button>
         </div>
     </div>
-    <img width="765" src="{{$cities[$currentIndex]['image']}}" alt="{{$cities[$currentIndex]['city'] }}" class="rounded-lg transition-all ease-in">
+    <div class="w-full">
+        <img width="765" src="{{$cities[$currentIndex]['image']}}" alt="{{$cities[$currentIndex]['city'] }}" class="rounded-lg h-full transition-all ease-in">
+    </div>
 </div>

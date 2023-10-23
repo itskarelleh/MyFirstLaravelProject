@@ -1,5 +1,5 @@
-<nav class="bg-white col-span-12 md:col-span-2 h-16 md:h-full flex flex-row items-center justify-center">
-    <div class="fixed p-4 top-0 h-full grid grid-cols-12 md:grid-cols-none grid-rows-none md:grid-rows-12">
+<nav class="bg-white m-4 rounded-lg col-span-12 md:col-span-2 h-16 md:h-full flex flex-row items-center justify-center">
+    <div class="fixed p-10 top-0 h-full grid grid-cols-12 gap-y-6 md:grid-cols-none grid-rows-none md:grid-rows-12">
         <div class="col-span-10 h-16 w-full flex flex-row items-center justify-center">
             <a href="/" class="block w-[50%]">
                 <img src={{url('/logo.png')}} width="" height="" alt="Tripit Logo"/>
@@ -9,12 +9,12 @@
             <button class="block md:hidden w-full rounded-md p-2">
                 <i class="iconoir-menu"></i>
             </button>
-            <div>
+            <div class="h-full flex flex-col items-center justify-between w-full">
                 <div class="hidden md:block">
-                    <button class="relative bottom-22 bg-blue-500 hover:bg-blue-600 transition-all ease-in-out text-white w-full rounded-md p-2 flex flex-row items-center justify-center">
+                    <button class="relative bottom-22 bg-blue-500 hover:bg-blue-600 transition-all ease-in-out text-white w-full rounded-md p-2 flex flex-row items-center justify-center text-xs">
                         New trip <i class="iconoir-plus text-xl"></i>
                     </button>
-                    <ul class="flex flex-col space-y-8">
+                    <ul class="flex flex-col space-y-4">
                         <x-link-with-icon iconClass="iconoir-home" label="Home" url="/" />
                         <x-link-with-icon iconClass="iconoir-bus" label="All trips" url="/" />
                         <x-link-with-icon iconClass="iconoir-airplane" label="Travels" url="/" />

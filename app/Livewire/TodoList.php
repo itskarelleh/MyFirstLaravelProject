@@ -8,6 +8,8 @@ use App\Models\Todo;
 class TodoList extends Component
 {
     public $todos;
+
+    public $showForm;
     public $newTodo = '';
 
     public function mount()
@@ -28,4 +30,19 @@ class TodoList extends Component
             $this->todos = Todo::all();
         }
     }
+
+    public function toggleForm() {
+        $this->showForm = !$this->showForm;
+    }
+
+    public function updateTodoOrder($todos)
+    {
+        foreach ($todos as $index => $todoId) {
+            $todo = Todo::find($todoId);
+            $todo->update(['position' => $index + 1]);
+        }
+
+        $this->todos = Todo::orderBy('position')->get();
+    }
+
 }

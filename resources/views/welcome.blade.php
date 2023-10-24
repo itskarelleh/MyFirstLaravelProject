@@ -14,8 +14,8 @@
     </head>
     <body class="antialiased bg-slate-100 min-h-screen">
         <div class="grid grid-cols-12">
-            @include('components.navigation')
-            <main class="text-2xl col-span-10 md:col-span-10 grid grid-cols-10 gap-6 p-4 w-full">
+            @livewire('navigation')
+            <main class="relative md:static top-24 text-2xl col-span-12 md:col-span-10 grid grid-cols-10 gap-6 p-4 w-full">
                 <header class="col-span-10 grid grid-cols-10 gap-6 w-full h-6">
                     <div class="col-span-7">
                         @include('components.search-bar')

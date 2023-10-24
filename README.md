@@ -1,70 +1,110 @@
-<<<<<<< HEAD
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Tripit: Travel Planner
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This is a dashboard developed with Laravel where users are able to get insight into the destinations they are traveling to.
 
-## About Laravel
+## Features
+Users have the ability to:
+- See their trips
+- Add todos to better organize for their trips
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Stack
+- Laravel
+- Livewire
+- Tailwind.css
+- SQLite
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Ongoing Changes and Features Being Added
+- Authentication
+- Event tracker and timeline
+- Dark Mode
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+How to Run Locally
+To run this travel planner locally on your machine, follow these steps:
 
-## Learning Laravel
+Prerequisites
+Before you begin, ensure you have the following tools installed on your machine:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+PHP (version 7.4 or higher)
+Composer
+Node.js and npm (for compiling assets)
+SQLite (or any other compatible database)
+Git
+Installation
+Clone the Repository:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+Open your terminal and run the following command to clone the repository to your local machine:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+bash
+Copy code
+git clone https://github.com/yourusername/tripit.git
+Replace yourusername with your actual GitHub username if the repository is hosted on GitHub.
 
-## Laravel Sponsors
+Navigate to the Project Directory:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Change your current directory to the project's root folder:
 
-### Premium Partners
+bash
+Copy code
+cd tripit
+Install PHP Dependencies:
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+Run the following command to install the PHP dependencies using Composer:
 
-## Contributing
+bash
+Copy code
+composer install
+Install JavaScript Dependencies:
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+Next, you need to install JavaScript dependencies using npm. Run the following commands:
 
-## Code of Conduct
+bash
+Copy code
+npm install
+Compile Assets:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+Compile the application's assets (JavaScript and CSS) using the following command:
+```bash
+npm run dev
+```
+If you are planning to make changes to assets, you can use npm run watch for automatic recompilation during development.
 
-## Security Vulnerabilities
+Set Up the Environment File:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+Duplicate the .env.example file and save it as .env. Then, generate a unique application key:
 
-## License
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+Configure the Database:
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-=======
-# MyFirstLaravelProject - Name TBA
->>>>>>> origin/main
+Open the .env file and set the database connection details. By default, this application is configured to use SQLite. You can use the SQLite database for quick setup or configure other databases like MySQL or PostgreSQL.
+
+For SQLite, you don't need to create a database; Laravel will create a SQLite database file for you.
+
+Run Migrations:
+
+Run the database migrations to create the necessary tables:
+
+```bash
+php artisan migrate
+```
+
+Start the Development Server:
+
+You can start the Laravel development server using the following command:
+
+```bash
+php artisan serve
+```
+This will start the development server at http://localhost:8000. You can access the application by opening this URL in your web browser.
+
+Access the Application:
+
+Open your web browser and navigate to http://localhost:8000. You should see the Tripit Travel Planner up and running locally.
+
+You can now explore and interact with the application locally. Make sure to check the ongoing changes and features being added, and feel free to contribute to the project or customize it to your needs. Enjoy using Tripit!
+
+
+
+

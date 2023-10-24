@@ -18,10 +18,10 @@ Users have the ability to:
 - Event tracker and timeline
 - Dark Mode
 
-How to Run Locally
+## How to Run Locally
 To run this travel planner locally on your machine, follow these steps:
 
-Prerequisites
+### Prerequisites
 Before you begin, ensure you have the following tools installed on your machine:
 
 PHP (version 7.4 or higher)
@@ -29,37 +29,37 @@ Composer
 Node.js and npm (for compiling assets)
 SQLite (or any other compatible database)
 Git
-Installation
+
+### Installation
 Clone the Repository:
 
 Open your terminal and run the following command to clone the repository to your local machine:
 
-bash
-Copy code
-git clone https://github.com/yourusername/tripit.git
-Replace yourusername with your actual GitHub username if the repository is hosted on GitHub.
-
+```bash
+git clone https://github.com/itskarelleh/travel-planner-dashboard.git
+```
 Navigate to the Project Directory:
 
 Change your current directory to the project's root folder:
 
-bash
-Copy code
-cd tripit
+```bash
+cd travel-planner-dashboard
+```
+
 Install PHP Dependencies:
 
 Run the following command to install the PHP dependencies using Composer:
 
-bash
-Copy code
+```bash
 composer install
+```
 Install JavaScript Dependencies:
 
 Next, you need to install JavaScript dependencies using npm. Run the following commands:
 
-bash
-Copy code
+```bash
 npm install
+```
 Compile Assets:
 
 Compile the application's assets (JavaScript and CSS) using the following command:

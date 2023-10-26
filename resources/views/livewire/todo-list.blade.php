@@ -18,7 +18,7 @@
             </ul>
     </div>
     <!-- Button to toggle the form -->
-    <button wire:click="toggleForm" class="text-xs font-semibold mt-2 w-full p-2 border border-neutral-800">Add new task +</button>
+    <button wire:click="toggleForm" class="rounded-lg bg-transparent hover:bg-blue-600 transition-all ease-in-out hover:text-white text-xs font-semibold mt-2 w-full p-2 border border-neutral-800">Add new task +</button>
 
     <!-- Form to add new tasks -->
     @if ($showForm)

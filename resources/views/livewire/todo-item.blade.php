@@ -10,22 +10,41 @@
                value="{{ $todo->name }}"/>
     </div>
     <div>{{ $todo->assignees }}</div>
-    <div class="text-xs group">
-        <div class="hidden group-hover:block">
-            <button wire:click="{{ $isEditing ? 'saveEdit' : 'toggleEdit'}}"
-                    class="{{ $isEditing ? 'iconoir-check' : 'iconoir-edit-pencil'}}">
-            </button>
-            <button class="iconoir-chat-bubble-empty">
-            </button>
-        </div>
-        <div class="block group-hover:hidden">
-            @if ($todo->priority === 0)
-                <span class="bg-green-500 text-white p-2 rounded-full">Low</span>
-            @elseif ($todo->priority === 1)
-                <span class="bg-yellow-500 text-gray-900 p-2 rounded-full">Medium</span>
+    <div class="text-xs group flex flex-evenly transition-all ease-in-out">
+        <div class="translate-x-8 delay-100 group-hover:translate-x-0 transition-all ease-in-out">
+            @if($isEditing)
+                <select wire:model="priority">
+                    @foreach($priorities as $value => $label)
+                        <option value="{{ $value }}">{{ $label }}</option>
+                    @endforeach
+                </select>
             @else
-                <span class="bg-red-500 text-white p-2 rounded-full">High</span>
+                @php
+                    $priorityLabel = $priorities[$todo->priority];
+                    $priorityColor = '';
+                    switch ($todo->priority) {
+                        case 0:
+                            $priorityColor = 'bg-green-500 text-white';
+                            break;
+                        case 1:
+                            $priorityColor = 'bg-yellow-500 text-gray-900';
+                            break;
+                        case 2:
+                            $priorityColor = 'bg-red-500 text-white';
+                            break;
+                    }
+                @endphp
+                <span class="{{ $priorityColor }} w-18 py-2 px-4 rounded-full">{{ $priorityLabel }}</span>
             @endif
+        </div>
+        <div class="group">
+            <div class="delay-200 scale-0 group-hover:scale-100 ml-4 transition-all ease-in-out">
+                <button wire:click="{{ $isEditing ? 'saveEdit' : 'toggleEdit'}}"
+                        class="transition-all ease-in-out {{ $isEditing ? 'iconoir-check' : 'iconoir-edit-pencil'}}">
+                </button>
+                <button class="transition-all ease-in-out iconoir-chat-bubble-empty">
+                </button>
+            </div>
         </div>
     </div>
 </div>

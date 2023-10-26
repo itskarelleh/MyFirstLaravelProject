@@ -13,6 +13,20 @@ class TodoItem extends Component
     public $focusInput = false;
     public $todos; // Add an array to hold the list of todos.
 
+    public $priority;
+
+    public $priorities = [
+        0 => 'Low',
+        1 => 'Medium',
+        2 => 'High'
+    ];
+
+    public function updatePriority() {
+        if($this->priority) {
+            $this->todo->update(['priority' => $this->priority]);
+        }
+    }
+
     public function render()
     {
         return view('livewire.todo-item');
@@ -23,7 +37,6 @@ class TodoItem extends Component
         $this->todo->update([
             'is_complete' => !$this->todo->is_complete
         ]);
-//        $this->todo->save();
     }
 
     public function toggleEdit() {
@@ -36,14 +49,15 @@ class TodoItem extends Component
 
     public function saveEdit() {
         // Update the todo item with the new value if it has changed.
-        if ($this->newTodoName !== $this->todo->name || $this->newTodoName->length >= 1) {
+        if ($this->newTodoName !== $this->todo->name) {
             $this->todo->update([
                 'name' => $this->newTodoName,
             ]);
         }
 
+        if($this->todo->priority !== $this->priority) $this->updatePriority();
+
         // Exit editing mode.
         $this->isEditing = false;
     }
-
 }

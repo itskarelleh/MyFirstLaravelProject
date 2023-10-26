@@ -16,29 +16,20 @@
         <div class="grid grid-cols-12">
             @livewire('navigation')
             <main class="relative md:static top-24 text-2xl col-span-12 md:col-span-10 grid grid-cols-10 gap-6 p-4 w-full">
+                <!--search bar and user menu-->
                 <header class="col-span-10 grid grid-cols-10 gap-6 w-full h-6">
                     <div class="col-span-7">
                         @include('components.search-bar')
                     </div>
-                    <div class="col-span-3 flex flex-row justify-end items-center space-x-4 p-2 border-b border-neutral-300 ">
-                        <img src="/flag-uk.png" class="w-4 h-4 overflow-hidden" alt="UK flag" />
-                        <div class="relative w-6 h-6">
-                            <div class="w-2 h-2 rounded-full bg-red-500 absolute top-0 right-1 z-10"></div>
-                            <i class="iconoir-bell"></i>
-                        </div>
-                        <div class="flex flex-row items-center justify-evenly space-x-4">
-                            <p class="text-xs font-bold">Nick McMilan</p>
-                            <figure class="w-8 h-8 rounded-full overflow-hidden">
-                                <img src="/nick-mcmilan.png" alt="Nick McMilan - Current User" />
-                            </figure>
-                        </div>
-                    </div>
+                        @include('components.user-menu')
                 </header>
                 <section class="col-span-7 space-y-4">
-                    <header class="grid grid-cols-12 h-56 gap-6">
+                    <!--city carousel and expense bubble chart-->
+                    <header class="grid grid-cols-12 gap-6">
                         @livewire('city-carousel')
                         @include('components.expense-bubble-chart')
                     </header>
+                    <!--cards-->
                     <section class="flex flex-row justify-between space-x-6">
                         @include('components.card', [
                         'title' => 'Travel Date',
@@ -86,6 +77,7 @@
                         @livewire('todo-list')
                     </section>
                 </section>
+                <!--timeline and calendar-->
                 <section class="grid grid-rows-6 col-span-3 p-4">
                     @include('components.september-calendar')
                 </section>

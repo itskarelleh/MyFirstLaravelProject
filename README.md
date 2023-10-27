@@ -2,7 +2,7 @@
 
 ![ezgif com-video-to-gif](https://github.com/itskarelleh/travel-planner-dashboard/assets/23417952/0b9a19f2-ec42-4123-8791-994b375e06ee)
 
-An app that helps travelers better organize their travels to destinations
+This is an app that helps travelers to better organize their trips to destinations
 
 ## Features
 Users have the ability to:
